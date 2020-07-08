@@ -1,0 +1,35 @@
+.empty-b {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    background: #19383d;
+    text-align: center;
+    padding: 80px;
+    box-sizing: border-box;
+}
+.empty {
+    .empty__text {
+        font-family: sans-serif;
+        font-size: 18px;
+        color: #fff;
+        margin-bottom: 20px;
+    }
+    .empty__link {
+        border: 1px solid #232a34;
+        border-radius: 5px;
+        padding: 15px;
+        font-size: 18px;
+        box-sizing: border-box;
+        display: inline-block;
+        color: #fff;
+        text-decoration: none;
+        font-weight: 700;
+        font-family: sans-serif;
+        background: #232a34;
+        outline: none;
+        &:hover {
+            background: #313843;
+            border-color: #313843;
+        }
+    }
+}

@@ -10,6 +10,7 @@ import { faTimes } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 import './History.scss'
+import EmptyPage from '../EmptyPage/EmptyPage'
 
 const History = () => {
     const {
@@ -38,6 +39,12 @@ const History = () => {
         dispatch(removeHistoryPhoto(item.id))
     }
 
+    if (historyList.length === 0) {
+        return <div className="empty-b">
+            <EmptyPage type="history" />
+        </div>
+    }
+
     return (
         <div className="history-b">
             <div className="history-sidebar">
@@ -62,7 +69,7 @@ const History = () => {
             <div className="history-content">
                 {historyFetching && <Fetching />}
                 {historySuccess && <PhotosList list={historyPhotos} />}
-                {historyFailure && <Failure color={`#232a34`}/>}
+                {historyFailure && <Failure color={`#232a34`} />}
             </div>
             <Switch>
                 <Route exact path={`${path}/photo/:id`}>
